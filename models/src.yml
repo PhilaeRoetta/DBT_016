@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: DBTD
+    database: DBT
+    schema: DBT_016
+    tables:
+      - name: TBL_ORDERS
+        identifier: LAND_ORDERS
+        loaded_at_field: CAST(DOB AS TIMESTAMP)
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 24
+            period: hour
+        columns:
+          - name: ORDER_ID
+            tests:
+              - not_null
+
+

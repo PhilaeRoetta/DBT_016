@@ -3,7 +3,7 @@ with items as (
         ITEM_ID,
         ITEM_NAME
     FROM
-        DBT.DBT_016.LAND_ORDERS
+        {{source('DBTD','TBL_ORDERS')}}
 )
 
 SELECT * FROM items

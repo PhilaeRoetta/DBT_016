@@ -4,7 +4,7 @@ with customers as (
         CUST_NAME AS CUSTOMER_NAME,
         DOB AS CUSTOMER_BIRTHDATE
     FROM
-        {{source('DBTD','TBL_ORDERS')}}
+        {{unit_test(ref('input_orders'),source('DBTD','TBL_ORDERS'))}}
 )
 
 SELECT * FROM customers

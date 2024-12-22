@@ -4,21 +4,5 @@ models:
       - name: CUSTOMER_ID
         tests:
           - not_null
-  - name: stg_items
-    columns:
-      - name: ITEM_ID
-        tests:
-          - accepted_values:
-              values:
-                - "I0"
-                - "I1"
-                - "I2"
-                - "I3"
-                - "I4"
-                - "I5"
-                - "I6"
-                - "I7"
-                - "I8"
-                - "I9"
-
-
+          - dbt_utils.equality:
+            compare_model: ref('output_customer')

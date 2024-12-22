@@ -4,3 +4,8 @@ models:
       - name: CUSTOMER_ID
         tests:
           - not_null
+  - name: stg_orders
+    columns:
+      - name: ORDER_AMOUNT
+        tests:
+          - column_is_positive

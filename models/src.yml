@@ -19,6 +19,9 @@ sources:
           - name: ORDER_ID
             tests:
               - not_null
+          - name: AMOUNT
+            tests:
+              - column_is_positive
       - name: MOCKS
         identifier: MOCK_ORDERS
       - name: INCR

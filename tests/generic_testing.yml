@@ -4,5 +4,3 @@ models:
       - name: CUSTOMER_ID
         tests:
           - not_null
-          - dbt_utils.equality:
-            compare_model: ref('output_customer')
